@@ -146,6 +146,9 @@ publish/
 !**/packages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
 #!**/packages/repositories.config
+# Folder with nuget.exe (build.cmd will restore this)
+.nuget/*
+.nuget/packages.config
 
 # Windows Azure Build Output
 csx/
