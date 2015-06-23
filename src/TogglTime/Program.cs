@@ -63,7 +63,7 @@ namespace TogglTime
                 }
                 int.TryParse( wid, out m_wid );
 
-                var pid = ConfigurationManager.AppSettings["TogglWorkspaceId"];
+                var pid = ConfigurationManager.AppSettings["TogglProjectId"];
                 Console.Write( "Project Id: [{0}] ", pid );
                 var pidInput = Console.ReadLine();
                 if( !string.IsNullOrWhiteSpace( pidInput ) )
@@ -163,6 +163,7 @@ namespace TogglTime
                 return;
             }
 
+            Console.WriteLine( "" );
             Console.WriteLine( "Submitting Toggl time of " + hours + " hrs /day for date range " + weekStart.ToShortDateString() + "-" + weekEnd.ToShortDateString() + "." );
             Console.WriteLine( "Workspace: {0}, Project: {1}, Task: {2}, Billable: {3}, Start hour: {4}", m_wid, m_pid, m_tid, m_billable, m_start );
 
