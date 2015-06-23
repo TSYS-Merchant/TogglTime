@@ -13,6 +13,10 @@ This configuration and build can also all be done from within Visual Studio.
 
 Various command line arguments are available if you do not want to be prompted for them each time you run TogglTime.
 
-`TogglTime [workspaceId:int] [projectId:int] [taskId:int] [billable:bool]`
+`TogglTime [[workspaceId:int] [projectId:int] [taskId:int] [billable:bool]]`
 
+# Linux/Mac
 
+Those on Linux or Mac can install [Mono](http://www.mono-project.com/download/) in order to run TogglTime. With [Mono](http://www.mono-project.com/download/) installed you can now build using `build.sh` and then execute TogglTime with `mono`:
+
+`mono TogglTime.exe [[workspaceId:int] [projectId:int] [taskId:int] [billable:bool]]`
