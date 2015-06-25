@@ -25,4 +25,4 @@ Those on Linux or Mac can install [Mono](http://www.mono-project.com/download/) 
 
 `mono TogglTime.exe [[workspaceId:int] [projectId:int] [taskId:int] [billable:bool]]`
 
-**TIP:** Using the above command line arguments, create a simple shell script for each project configuration on your desktop that can launch TogglTime by just double clicking it. See [here](http://stackoverflow.com/questions/5125907/how-to-run-a-shell-script-in-os-x-by-double-clicking) for instructions on setting something like that that up.
+**TIP:** Using the above command line arguments, create a simple shell script for each project configuration on your desktop that can launch TogglTime by just double clicking it. See [here](http://stackoverflow.com/questions/5125907/how-to-run-a-shell-script-in-os-x-by-double-clicking) for instructions on setting something like that up.
