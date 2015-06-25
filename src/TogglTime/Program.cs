@@ -90,11 +90,11 @@ namespace TogglTime
             else
             {
                 var tid = ConfigurationManager.AppSettings["TogglTaskId"];
-                Console.Write( "Task Id: [{0}] ", string.IsNullOrWhiteSpace( tid ) ? "none" : tid );
+                Console.Write( "Task Id: [{0}] ", string.IsNullOrWhiteSpace( tid ) ? "-" : tid );
                 var tidInput = Console.ReadLine();
                 if( !string.IsNullOrWhiteSpace( tidInput ) )
                 {
-                    tid = tidInput;
+                    tid = tidInput == "-" ? null : tidInput;
                 }
 
                 if( !string.IsNullOrWhiteSpace( tid ) )
@@ -182,7 +182,8 @@ namespace TogglTime
 
             Console.WriteLine( "" );
             Console.WriteLine( "Submitting Toggl time of " + hours + " hrs /day for date range " + weekStart.ToShortDateString() + "-" + weekEnd.ToShortDateString() + "." );
-            Console.WriteLine( "Workspace: {0}, Project: {1}, Task: {2}, Billable: {3}, Start hour: {4}", m_wid, m_pid, m_tid, m_billable, m_start );
+            Console.WriteLine( "Workspace: {0}, Project: {1}, Task: {2}, Billable: {3}, Start hour: {4}", m_wid, m_pid, m_tid.HasValue ? m_tid.Value.ToString() : "-", m_billable, m_start );
+            Console.WriteLine( "" );
 
             DateTime day = weekStart;
             while( day <= weekEnd )
