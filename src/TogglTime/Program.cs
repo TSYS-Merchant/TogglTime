@@ -82,7 +82,10 @@ namespace TogglTime
 
             if( args.Length > 2 )
             {
-                m_tid = int.Parse( args[2] );
+                if( args[2] != "-" )
+                {
+                    m_tid = int.Parse( args[2] );
+                }
             }
             else
             {
@@ -120,23 +123,37 @@ namespace TogglTime
             var weekEnd = weekStart.AddDays( 4 ); // friday
 
             Console.Write( "Time date range: [{0}-{1}] ", weekStart.ToShortDateString(), weekEnd.ToShortDateString() );
-            var weekRange = Console.ReadLine();
+            var dateRangeInput = Console.ReadLine();
 
-            if( !string.IsNullOrWhiteSpace( weekRange ) )
+            if( !string.IsNullOrWhiteSpace( dateRangeInput ) )
             {
-                var weekRangeSplit = weekRange.Split( '-' );
-                if( weekRangeSplit.Count() != 2 )
+                if( dateRangeInput.Contains( "-" ) )
                 {
-                    Console.WriteLine( "Invalid date range input. Press any key to exit." );
-                    Console.ReadLine();
-                    return;
-                }
+                    var dateRangeSplit = dateRangeInput.Split( '-' );
+                    if( dateRangeSplit.Count() != 2 )
+                    {
+                        Console.WriteLine( "Invalid date range input. Press any key to exit." );
+                        Console.ReadLine();
+                        return;
+                    }
 
-                if( !DateTime.TryParse( weekRangeSplit[0], out weekStart ) || !DateTime.TryParse( weekRangeSplit[1], out weekEnd ) )
+                    if( !DateTime.TryParse( dateRangeSplit[0], out weekStart ) || !DateTime.TryParse( dateRangeSplit[1], out weekEnd ) )
+                    {
+                        Console.WriteLine( "Invalid date range input. Press any key to exit." );
+                        Console.ReadLine();
+                        return;
+                    }
+                }
+                else
                 {
-                    Console.WriteLine( "Invalid date range input. Press any key to exit." );
-                    Console.ReadLine();
-                    return;
+                    if( !DateTime.TryParse( dateRangeInput, out weekStart ) )
+                    {
+                        Console.WriteLine( "Invalid date input. Press any key to exit." );
+                        Console.ReadLine();
+                        return;
+                    }
+
+                    weekEnd = weekStart;
                 }
             }
 
