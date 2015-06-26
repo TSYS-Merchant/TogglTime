@@ -24,3 +24,7 @@ fi
 
 mono .nuget/nuget.exe restore
 xbuild TogglTime.sln /p:Configuration=Release
+
+rm -rf Release
+mkdir Release
+cp -r src/TogglTime/bin/Release/* Release

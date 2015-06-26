@@ -16,3 +16,7 @@ copy %CACHED_NUGET% .nuget\nuget.exe > nul
 :build
 call .nuget\nuget.exe restore
 call msbuild TogglTime.sln /p:Configuration=Release
+
+:copybuild
+IF EXIST Release rd /S /Q Release
+echo d | xcopy src\TogglTime\bin\Release Release /y /d
