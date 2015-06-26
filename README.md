@@ -3,9 +3,9 @@ A command line utility for submitting your time to Toggl.
 
 # Setup
 
-1. Edit the [`App.Config`](https://github.com/kspearrin/TogglTime/blob/master/src/TogglTime/App.config) file with your Toggl default information. This includes your [Toggl API Token](https://github.com/toggl/toggl_api_docs#api-token) and your default settings for workspace, project, task, and billable.
+1. Edit the [`src/TogglTime/App.Config`](https://github.com/kspearrin/TogglTime/blob/master/src/TogglTime/App.config) file with your Toggl default information. This includes your [Toggl API Token](https://toggl.com/app/profile) (found on Toggl website "My Profile") and your default workspace, project, task, and billable settings.
 2. Run `build.cmd`.
-3. Run `TogglTime.exe` from the `/src/TogglTime/bin/Release` folder. Feel free to copy the `Release` folder out somewhere more usable for each configuration build and/or create a shortcut to `TogglTime.exe` on your desktop.
+3. Run `src/TogglTime/bin/Release/TogglTime.exe`. Feel free to copy the `Release` folder out somewhere more usable for each configuration build and/or create a shortcut to `TogglTime.exe` on your desktop.
 
 This configuration and build can also all be done from within Visual Studio.
 
